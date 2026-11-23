@@ -31,7 +31,11 @@
            border-radius: 8px; font-weight: 600; text-decoration: none;
            border: 2px solid transparent; }
     .btn-primary { background: var(--accent); color: var(--accent-ink); }
-    .thanks { color: var(--muted); text-align: center; margin: 0 0 32px; }
+    .thanks { color: var(--muted); text-align: center; margin: 0 0 32px;
+              display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .btn-coffee { padding: 8px 16px; font-size: .95rem; color: var(--ink);
+                  border-color: #e0b400; background: transparent; }
+    .btn-coffee:hover { background: #ffdd00; color: #23201b; filter: none; }
     .thanks:empty { display: none; }
     .btn-ghost { border-color: var(--line); color: var(--ink); }
     .btn:hover { filter: brightness(1.08); }
@@ -80,7 +84,7 @@
       <h2 id="roster-h">Building a team?</h2>
       <p>I also make a free online roster builder: pick a team, track your budget and skills,
         and print a clean team sheet.</p>
-      <a class="btn btn-primary" id="roster-link" href="#">Open the roster builder</a>
+      <a class="btn btn-primary" id="roster-link" href="#" target="_blank" rel="noopener">Open the roster builder ↗</a>
     </section>
   </main>
 
@@ -104,8 +108,8 @@
 
     if (SITE.coffeeUrl) {
       document.getElementById("thanks").innerHTML =
-        `Everything here is free. If you've enjoyed printing or painting one, you can
-         <a href="${esc(SITE.coffeeUrl)}" rel="noopener">buy me a coffee</a>. Thanks!`;
+        `<span>Everything here is free. If you've enjoyed printing or painting one, a coffee is always appreciated.</span>
+         <a class="btn btn-coffee" href="${esc(SITE.coffeeUrl)}" target="_blank" rel="noopener">☕ Buy me a coffee</a>`;
     }
     document.getElementById("roster-link").href = SITE.rosterBuilderUrl;
 
