@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Free Fantasy Football Minis</title>
+  <meta name="description" content="Free, original 3D-printable fantasy football miniatures. Download the STL files.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f4efe4; --surface: #fffdf8; --ink: #23201b; --muted: #6b6257;
+      --line: #ddd3c2; --accent: #2f6b2f; --accent-ink: #fff; --coffee: #ffdd00;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #1b1a17; --surface: #25231f; --ink: #efe9dd; --muted: #a89f92;
+              --line: #3a362f; --accent: #6fae5f; --accent-ink: #10200d; }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink);
+           font: 16px/1.55 Inter, system-ui, sans-serif; }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+    header { padding: 48px 0 24px; border-bottom: 3px double var(--line); }
+    h1, h2 { font-family: "Alfa Slab One", Georgia, serif; font-weight: 400;
+             letter-spacing: .01em; line-height: 1.15; margin: 0 0 8px; }
+    h1 { font-size: clamp(2rem, 6vw, 3.2rem); }
+    h2 { font-size: 1.7rem; }
+    .lede { color: var(--muted); max-width: 60ch; margin: 0; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px;
+           border-radius: 8px; font-weight: 600; text-decoration: none;
+           border: 2px solid transparent; }
+    .btn-primary { background: var(--accent); color: var(--accent-ink); }
+    .btn-coffee { background: var(--coffee); color: #23201b; }
+    .btn-ghost { border-color: var(--line); color: var(--ink); }
+    .btn:hover { filter: brightness(1.08); }
+    .btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+
+    .model { display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+             background: var(--surface); border: 1px solid var(--line);
+             border-radius: 14px; padding: 24px; margin: 32px 0; }
+    .model figure { margin: 0; }
+    .model img, .model video { width: 100%; height: auto; display: block;
+             border-radius: 10px; background: #fff; }
+    .model figcaption { font-size: .85rem; color: var(--muted); margin-top: 6px; }
+    .meta { font-size: .9rem; color: var(--muted); }
+    .model ul { padding-left: 20px; }
+    .toggle { background: none; border: 0; color: var(--accent); font: inherit;
+              font-size: .9rem; padding: 0; cursor: pointer; text-decoration: underline; }
+
+    .promo { background: var(--surface); border: 1px solid var(--line);
+             border-left: 6px solid var(--accent); border-radius: 10px;
+             padding: 20px 24px; margin: 32px 0; }
+    .promo p { margin: 0 0 12px; }
+
+    .small { font-size: .85rem; color: var(--muted); }
+    footer { border-top: 3px double var(--line); padding: 24px 0 48px; margin-top: 40px; }
+    footer p { margin: 0 0 10px; max-width: 70ch; }
+    a { color: var(--accent); }
+
+    @media (max-width: 700px) { .model { grid-template-columns: 1fr; padding: 16px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Free Fantasy Football Minis</h1>
+      <p class="lede">Original 3D-printable miniatures for fantasy football tabletop games.
+        Free to download, print and paint. More to come.</p>
+      <div class="actions" id="header-actions"></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div id="models"></div>
+
+    <section class="promo" aria-labelledby="roster-h">
+      <h2 id="roster-h">Building a team?</h2>
+      <p>I also make a free online roster builder: pick a team, track your budget and skills,
+        and print a clean team sheet.</p>
+      <a class="btn btn-primary" id="roster-link" href="#">Open the roster builder</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p><strong>Licence:</strong> these files are shared under
+        <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.
+        Print them, share them and paint them, but please credit me and don't sell the files or prints.</p>
+      <p><strong>How they're made:</strong> each design starts from my own written description,
+        turned into a concept image with AI (ChatGPT) and then into a 3D model with Tripo (paid plan),
+        before being tidied for printing.</p>
+      <p class="small">Unofficial fan-made designs. Not affiliated with, or endorsed by, Games Workshop.
+        All trademarks belong to their owners.</p>
+    </div>
+  </footer>
+
+  <script src="models.js"></script>
+  <script>
+    const esc = s => String(s).replace(/[&<>"']/g, c =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+    const coffeeBtn = SITE.coffeeUrl
+      ? `<a class="btn btn-coffee" href="${esc(SITE.coffeeUrl)}" rel="noopener">☕ Buy me a coffee</a>` : "";
+
+    document.getElementById("header-actions").innerHTML = coffeeBtn;
+    document.getElementById("roster-link").href = SITE.rosterBuilderUrl;
+
+    document.getElementById("models").innerHTML = MODELS.map(m => `
+      <article class="model" id="${esc(m.id)}">
+        <figure>
+          <img src="${esc(m.image)}" alt="${esc(m.imageAlt)}" data-video="${esc(m.video || "")}">
+          <figcaption>${m.paintedBy ? esc(m.paintedBy) : "Concept render"}
+            ${m.video ? ` · <button class="toggle" type="button">Watch the 3D turnaround</button>` : ""}</figcaption>
+        </figure>
+        <div>
+          <h2>${esc(m.name)}</h2>
+          <p>${esc(m.tagline)}</p>
+          <ul>${m.notes.map(n => `<li>${esc(n)}</li>`).join("")}</ul>
+          <p class="meta">${esc(m.fileSize)} · added ${esc(m.added)}</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="${esc(m.file)}" download>⬇ Download STL</a>
+            ${coffeeBtn}
+          </div>
+        </div>
+      </article>`).join("");
+
+    document.querySelectorAll(".toggle").forEach(btn => btn.addEventListener("click", () => {
+      const fig = btn.closest("figure");
+      const img = fig.querySelector("img");
+      const v = document.createElement("video");
+      Object.assign(v, { src: img.dataset.video, controls: true, autoplay: true,
+                         muted: true, loop: true, playsInline: true });
+      img.replaceWith(v);
+      btn.remove();
+    }));
+  </script>
+</body>
+</html>
