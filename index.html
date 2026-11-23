@@ -31,7 +31,8 @@
            border-radius: 8px; font-weight: 600; text-decoration: none;
            border: 2px solid transparent; }
     .btn-primary { background: var(--accent); color: var(--accent-ink); }
-    .btn-coffee { background: var(--coffee); color: #23201b; }
+    .thanks { color: var(--muted); text-align: center; margin: 0 0 32px; }
+    .thanks:empty { display: none; }
     .btn-ghost { border-color: var(--line); color: var(--ink); }
     .btn:hover { filter: brightness(1.08); }
     .btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
@@ -68,12 +69,12 @@
       <h1>Free Fantasy Football Minis</h1>
       <p class="lede">Original 3D-printable miniatures for fantasy football tabletop games.
         Free to download, print and paint. More to come.</p>
-      <div class="actions" id="header-actions"></div>
     </div>
   </header>
 
   <main class="wrap">
     <div id="models"></div>
+    <p class="thanks" id="thanks"></p>
 
     <section class="promo" aria-labelledby="roster-h">
       <h2 id="roster-h">Building a team?</h2>
@@ -101,10 +102,11 @@
     const esc = s => String(s).replace(/[&<>"']/g, c =>
       ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
-    const coffeeBtn = SITE.coffeeUrl
-      ? `<a class="btn btn-coffee" href="${esc(SITE.coffeeUrl)}" rel="noopener">☕ Buy me a coffee</a>` : "";
-
-    document.getElementById("header-actions").innerHTML = coffeeBtn;
+    if (SITE.coffeeUrl) {
+      document.getElementById("thanks").innerHTML =
+        `Everything here is free. If you've enjoyed printing or painting one, you can
+         <a href="${esc(SITE.coffeeUrl)}" rel="noopener">buy me a coffee</a>. Thanks!`;
+    }
     document.getElementById("roster-link").href = SITE.rosterBuilderUrl;
 
     document.getElementById("models").innerHTML = MODELS.map(m => `
@@ -121,7 +123,6 @@
           <p class="meta">${esc(m.fileSize)} · added ${esc(m.added)}</p>
           <div class="actions">
             <a class="btn btn-primary" href="${esc(m.file)}" download>⬇ Download STL</a>
-            ${coffeeBtn}
           </div>
         </div>
       </article>`).join("");
