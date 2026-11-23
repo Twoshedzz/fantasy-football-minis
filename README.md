@@ -1,4 +1,4 @@
-# Free Fantasy Football Minis
+# Twoshedzz Minis
 
 A simple static download page for my original 3D-printable fantasy football miniatures, hosted on GitHub Pages.
 
