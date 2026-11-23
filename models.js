@@ -8,6 +8,9 @@ const SITE = {
   // Your Buy Me a Coffee (or Ko-fi) page. Leave "" to hide the button.
   coffeeUrl: "https://buymeacoffee.com/twoshedzz",
   rosterBuilderUrl: "https://bloodbowlrosterbuilder.co.uk/",
+  // Google Analytics 4 measurement ID. Only loads after a visitor says yes.
+  // Leave "" to turn analytics (and the banner) off.
+  gaId: "G-7L7YHE9KNL",
 };
 
 const MODELS = [
