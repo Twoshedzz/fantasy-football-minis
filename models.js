@@ -41,7 +41,7 @@ const MODELS = [
       },
     ],
     file: "files/orkshire-coach.zip",
-    fileSize: "37 MB zip (95 MB STL)",
+    fileSize: "9 MB zip (19 MB STL)",
     added: "November 2026",
     notes: [
       "Single-piece figure, no base: glue to a base of your choice",
