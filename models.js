@@ -44,6 +44,7 @@ const MODELS = [
     fileSize: "9 MB zip (19 MB STL)",
     added: "November 2026",
     notes: [
+      "Ready to print at 32mm tall: no scaling needed",
       "Single-piece figure, no base: glue to a base of your choice",
       "Designed for resin printing; check supports on the pointing finger and clipboard",
       "First handed out as prints at club tournaments",
