@@ -76,6 +76,10 @@ const MODELS = [
       },
     ],
     file: "files/orkshire-coach.zip",
+    // Links to the same model on other sites. Leave out any you have not posted to.
+    elsewhere: [
+      { name: "MakerWorld", url: "https://makerworld.com/en/models/3669837-orkshire-coach-fantasy-football-coach-miniature" },
+    ],
     fileSize: "9 MB zip (19 MB STL)",
     added: "November 2026",
     notes: [

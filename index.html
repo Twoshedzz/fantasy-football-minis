@@ -140,6 +140,7 @@
           <p class="meta">${esc(m.fileSize)} · added ${esc(m.added)}</p>
           <div class="actions">
             <a class="btn btn-primary" href="${esc(m.file)}" download>⬇ Download STL</a>
+            ${(m.elsewhere || []).map(e => `<a class="btn btn-ghost" href="${esc(e.url)}" target="_blank" rel="noopener">Also on ${esc(e.name)} ↗</a>`).join("")}
           </div>
         </div>
       </article>`).join("");
