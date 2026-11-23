@@ -26,6 +26,13 @@ const MODELS = [
         caption: "Painted by Martin Rowntree",
       },
       {
+        label: "Printed",
+        type: "image",
+        src: "images/orkshire-coach-printed.jpg",
+        alt: "Unpainted grey resin print of the orc coach lying on a wooden table next to a pound coin for scale",
+        caption: "Unpainted resin print, next to a £1 coin for scale",
+      },
+      {
         label: "Concept art",
         type: "image",
         src: "images/orkshire-coach.jpg",
