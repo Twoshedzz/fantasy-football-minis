@@ -15,9 +15,31 @@ const MODELS = [
     id: "orkshire-coach",
     name: "Orkshire Coach",
     tagline: "A retired orc bruiser in a flat cap, bellowing plays from the touchline.",
-    image: "images/orkshire-coach-painted.jpg",
-    imageAlt: "Painted orc coach miniature on a round base: black flat cap, grey beard, pink shirt, pointing with one hand and holding a blue clipboard with a white rose",
-    video: "images/orkshire-coach-render.mp4",
+    // Pictures shown in the switcher, first one shows by default.
+    // type is "image" or "video". Leave any out that you don't have.
+    views: [
+      {
+        label: "Painted",
+        type: "image",
+        src: "images/orkshire-coach-painted.jpg",
+        alt: "Painted orc coach miniature on a round base: black flat cap, grey beard, pink shirt, pointing with one hand and holding a blue clipboard with a white rose",
+        caption: "Painted by a fellow club member", // swap in their name/handle once they're happy to be credited
+      },
+      {
+        label: "Concept art",
+        type: "image",
+        src: "images/orkshire-coach.jpg",
+        alt: "AI concept art of the orc coach in a brown flat cap and torn shirt, pointing and holding a clipboard with a white rose",
+        caption: "The AI concept art the 3D model was made from",
+      },
+      {
+        label: "3D model",
+        type: "video",
+        src: "images/orkshire-coach-render.mp4",
+        alt: "Turntable video of the unpainted 3D model",
+        caption: "Turnaround of the STL",
+      },
+    ],
     file: "files/orkshire-coach.zip",
     fileSize: "37 MB zip (95 MB STL)",
     added: "November 2026",
@@ -26,6 +48,5 @@ const MODELS = [
       "Designed for resin printing; check supports on the pointing finger and clipboard",
       "First handed out as prints at club tournaments",
     ],
-    paintedBy: "Painted by a fellow club member", // swap in their name/handle once they're happy to be credited
   },
 ];
