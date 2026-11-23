@@ -23,7 +23,7 @@ const MODELS = [
         type: "image",
         src: "images/orkshire-coach-painted.jpg",
         alt: "Painted orc coach miniature on a round base: black flat cap, grey beard, pink shirt, pointing with one hand and holding a blue clipboard with a white rose",
-        caption: "Painted by a fellow club member", // swap in their name/handle once they're happy to be credited
+        caption: "Painted by Martin Rowntree",
       },
       {
         label: "Concept art",
