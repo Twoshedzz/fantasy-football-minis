@@ -18,7 +18,7 @@ Once published, it will be at **https://petesmithdesign.com/fantasy-football-min
 1. Zip the STL: `zip -9 -j files/<name>.zip "<path to>.stl"`. Keep each file under 100 MB (GitHub's limit); zipping usually saves 60%.
 2. Add a picture to `images/`, about 900px wide, as JPG.
 3. In `models.js`, copy the Orkshire Coach block and edit it. `views` holds the pictures for the switcher (painted photo, concept art, 3D video); leave out any you don't have.
-4. In `index.html`, bump the number in `models.js?v=2` (to `v=3` and so on) so browsers fetch the new list rather than a cached copy.
+4. In `index.html`, bump the number in `models.js?v=…` by one so browsers fetch the new list rather than a cached copy.
 5. Commit and push. The page updates in about a minute.
 
 ## Set the coffee link

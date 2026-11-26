@@ -17,7 +17,7 @@ const MODELS = [
   {
     id: "orkshire-coach",
     name: "Orkshire Coach",
-    tagline: "A retired orc bruiser in a flat cap, bellowing plays from the touchline.",
+    tagline: "Known at the club as Kluffy: a retired orc bruiser in a flat cap, bellowing plays from the touchline.",
     // Pictures shown in the switcher, first one shows by default.
     // type is "image" or "video". Leave any out that you don't have.
     views: [
@@ -64,6 +64,13 @@ const MODELS = [
         caption: "Unpainted resin print, next to a £1 coin for scale",
       },
       {
+        label: "Club logo",
+        type: "image",
+        src: "images/orkshire-logo.png",
+        alt: "Black and white Orkshire club logo: a bearded orc in a flat cap in front of a Yorkshire rose, above a banner reading ORKSHIRE",
+        caption: "The Orkshire club logo by Martin Rowntree, which the coach is based on. Logo © Martin Rowntree, used with permission",
+      },
+      {
         label: "Concept art",
         type: "image",
         src: "images/orkshire-coach.jpg",
@@ -85,6 +92,8 @@ const MODELS = [
     ],
     fileSize: "9 MB zip (19 MB STL)",
     added: "November 2026",
+    // Shown as a "Design credit" line under the notes.
+    credit: "Based on the Orkshire club logo designed by Martin Rowntree, who also painted the mini shown here. Thanks, Martin!",
     notes: [
       "Ready to print at 38mm tall, the same size as the club prints: no scaling needed",
       "Single-piece figure, no base: glue to a base of your choice",

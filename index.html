@@ -114,7 +114,8 @@
         Print them, share them and paint them, but please credit me and don't sell the files or prints.</p>
       <p><strong>How they're made:</strong> each design starts from my own written description,
         turned into a concept image with AI (ChatGPT) and then into a 3D model with Tripo (paid plan),
-        before being tidied for printing.</p>
+        before being tidied for printing. Where a design is based on someone else's artwork, they're
+        credited with the model, and their artwork stays theirs: it isn't covered by the licence above.</p>
       <p class="small">Unofficial fan-made designs. Not affiliated with, or endorsed by, Games Workshop.
         All trademarks belong to their owners.</p>
       <p class="small">Created by
@@ -135,7 +136,7 @@
     </div>
   </div>
 
-  <script src="models.js?v=2"></script>
+  <script src="models.js?v=3"></script>
   <script>
     const esc = s => String(s).replace(/[&<>"']/g, c =>
       ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -160,6 +161,7 @@
           <h2>${esc(m.name)}</h2>
           <p>${esc(m.tagline)}</p>
           <ul>${m.notes.map(n => `<li>${esc(n)}</li>`).join("")}</ul>
+          ${m.credit ? `<p class="meta"><strong>Design credit:</strong> ${esc(m.credit)}</p>` : ""}
           <p class="meta">${esc(m.fileSize)} · added ${esc(m.added)}</p>
           <div class="actions">
             <a class="btn btn-primary" href="${esc(m.file)}" download>⬇ Download STL</a>
